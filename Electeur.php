@@ -1,44 +1,42 @@
 <?php
-class electeur extends personne{
-
-    private $bureauVote;
-    private $vote;
-
-
-  public function __construct($nom, $prenom, $bureauVote, $vote){
-      Parent::__construct($nom, $prenom);
-      $this->bureauVote = $bureauVote;
-      $this->bote = $vote;
-  }
-
-
-
-  public function getBureauVote(){
-    return $this->bureauVote;
- }   
- public function setBureauVote($bureauVote){
-     $this->bureauVote = $bureauVote;
- }
- public function getVote(){
-    return $this->vote;
- }   
- public function setVote($vote){
-     $this->vote = $vote;
- }
-
- public function boolVote(){
-     if($this->getVote){
-         return true;
-     }else {
-         return false;
-     }
- }
+//Classe electeur
+class Electeur extends Personne {
  
- public function isVote(){
-     if($this->getVote){
-         echo ' A voté!';
-     }else {
-         echo 'N\'a pas voté!'  ;   }
- }
-
+    public $bureau_de_vote;
+    public $vote;
+ 
+function __construct($nom,$prenom,$bureau_de_vote) {
+ 
+    parent::__construct($nom, $prenom);
+    $this->setBureauDeVote($bureau_de_vote);
+ 
+}
+ 
+//setter
+public function setBureauDeVote($bureau_de_vote){
+    $this->bureau_de_vote = $bureau_de_vote;
+}
+ 
+//getter
+ 
+public function getBureaudeVote() {
+    return $this->bureau_de_vote;
+}
+ 
+//methode boolean definissant si un electeur a voté
+public function aVoter() {
+    $this->vote=TRUE; 
+}
+ 
+public function isVoter(){
+ 
+    if($this->vote){
+    echo "L'électeur ".$this->getNom(). " ". $this->getPrenom(). " a voté dans le bureau ".$this->getBureauDeVote() ."<br>";
+}
+else {
+    echo "L'électeur ".$this->getNom(). " ". $this->getPrenom(). " est bien inscrit dans le bureau ".$this->getBureauDeVote() .", mais il n'a pas voté <br>";
+ 
+}
+}
+ 
 }

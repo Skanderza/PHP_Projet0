@@ -3,6 +3,7 @@
 require 'Utilisateurs.php'; //on importe la classe Utilisateurs
 
 $utilisateur1 = new Utilisateurs('ZAHI', 'Skan', 'za@gmail.com'); //on crée un objet $utilisateur1 avec l'opérateur new
+$utilisateur2 = new Utilisateurs('DUPOND', 'Toto', 'toto@gmail.com');
 
 //Afficher les donnees de l'utilisateur1
 echo $utilisateur1->getNom();
@@ -15,6 +16,11 @@ $utilisateur1->setNote(15);
 echo $utilisateur1->getNote();
 echo "<br/>";
 $utilisateur1->degreImplication();
+echo "<br/>";
+$utilisateur2->setNote(9);
+echo "<br/>";
+echo $utilisateur2->getNom()." ";
+$utilisateur2->degreImplication();
 
 require 'auteur.php';
  
@@ -152,15 +158,19 @@ require 'Personne.php';
 
 
 require 'Client.php';
-$client1 = new Client('DUPOND', 'Toto', 'Paris');
- $client1->getCoordonnee();
+$client1 = new Client('KING','Bill','UK');
+$client1->getCoordonnee();
+
 
 require 'Electeur.php';
-$electeur1 = new Electeur('DUPONT', 'Tata',1,'vote');
+$electeur1 = new Electeur('DUPONT', 'Tata', 1);
+echo'<br/>';
+echo'<br/>';
 
-echo $electeur1->isVote();
+//$electeur1->aVoter();
+echo'<br/>';
 
-
+$electeur1->isVoter();
 
 
 
